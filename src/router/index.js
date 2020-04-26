@@ -16,7 +16,18 @@ const routes = [
   {
     path: '/home',
     // 动态引入的页面组件
-    component: () => import(/* webpackChunkName: "home" */ '../views/Home.vue')
+    component: () => import(/* webpackChunkName: "home" */ '../views/Home.vue'),
+    redirect: '/welcome',
+    children: [
+      {
+        path: '/welcome',
+        component: () => import(/* webpackChunkName: "welcome" */ '../views/Welcome.vue')
+      },
+      {
+        path: '/users',
+        component: () => import(/* webpackChunkName: "users" */ '../views/user/Users.vue')
+      }
+    ]
   }
 ]
 

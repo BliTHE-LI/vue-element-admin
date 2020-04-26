@@ -13,6 +13,11 @@ import './assets/css/global.stylus'
 Vue.config.productionTip = false
 
 axios.defaults.baseURL = 'https://www.liulongbin.top:8888/api/private/v1/'
+axios.interceptors.request.use(config => {
+  // 请求头中添加token
+  config.headers.Authorization = window.sessionStorage.getItem('token')
+  return config
+})
 Vue.prototype.$http = axios
 
 new Vue({
