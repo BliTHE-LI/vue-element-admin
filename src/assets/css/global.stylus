@@ -1,6 +1,7 @@
 html, body, #app
     height 100%
     margin 0
+    min-width 1366px
 .el-breadcrumb
     margin-bottom 15px
     font-size 12px
