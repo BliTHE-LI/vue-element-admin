@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import axios from 'axios'
+import TreeTable from 'vue-table-with-tree-grid'
 
 // 按需导入Element-UI
 import './plugins/element.js'
@@ -19,6 +20,9 @@ axios.interceptors.request.use(config => {
   return config
 })
 Vue.prototype.$http = axios
+
+// 导入树形表格组件
+Vue.component('tree-table', TreeTable)
 
 new Vue({
   router,
