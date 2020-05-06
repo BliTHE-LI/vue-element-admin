@@ -46,7 +46,7 @@
         </el-submenu>
       </el-menu>
     </el-aside>
-    <!--  -->
+    <!-- 页面主体区域 -->
     <el-main>
       <router-view></router-view>
     </el-main>
