@@ -4,7 +4,7 @@ html, body, #app
     min-width 1366px
 .el-breadcrumb
     margin-bottom 15px
-    font-size 12px
+    font-size 14px
 .el-card
     box-shadow 0 1px 1px rgba(0, 0, 0, 0.15) !important
 .el-pagination
@@ -13,3 +13,11 @@ html, body, #app
     height 300px
     .el-cascader-menu__wrap
         overflow-x hidden
+.el-steps
+    margin 15px 0
+    .el-step__title
+        font-size 13px
+.el-table
+    font-size 14px
+.ql-editor
+    min-height 300px

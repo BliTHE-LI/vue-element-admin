@@ -2,6 +2,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '../views/user/Login.vue'
 import Home from '../views/Home.vue'
+// 引入nprogress
+import NProgress from 'nprogress' // 进度条
+import 'nprogress/nprogress.css' // 这个样式必须引入
 
 Vue.use(VueRouter)
 // const constantRouterComponents = {
@@ -54,12 +57,22 @@ const routes = [
       {
         name: '商品分类',
         path: '/categories',
-        component: () => import(/* webpackChunkName: "categories" */ '../views/goods/Cate.vue')
+        component: () => import(/* webpackChunkName: "goods_categories" */ '../views/goods/Cate.vue')
       },
       {
         name: '分类参数',
         path: '/params',
-        component: () => import(/* webpackChunkName: "params" */ '../views/goods/Params.vue')
+        component: () => import(/* webpackChunkName: "goods_params" */ '../views/goods/Params.vue')
+      },
+      {
+        name: '商品列表',
+        path: '/goods',
+        component: () => import(/* webpackChunkName: "goods_list" */ '../views/goods/List.vue')
+      },
+      {
+        name: '添加商品',
+        path: '/goods/add',
+        component: () => import(/* webpackChunkName: "goods_add" */ '../views/goods/Add.vue')
       }
     ]
   }
@@ -69,8 +82,11 @@ const router = new VueRouter({
   mode: 'history',
   routes
 })
-
+// 简单配置
+NProgress.inc(0.2)
+NProgress.configure({ easing: 'ease', speed: 500, showSpinner: false })
 router.beforeEach((to, from, next) => {
+  NProgress.start()
   // to => 将要访问的路径
   // from => 从哪个路径跳转而来
   // next => 一个函数，控制是否继续执行
@@ -81,6 +97,10 @@ router.beforeEach((to, from, next) => {
     if (!token) return next('/login')
   }
   next()
+})
+
+router.afterEach(() => {
+  NProgress.done()
 })
 
 export default router

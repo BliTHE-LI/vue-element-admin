@@ -36,7 +36,7 @@
           <!-- 添加参数的按钮 -->
           <el-button size="mini" type="primary" :disabled="isBtnDisabled" @click="addDialogVisible = true">添加参数</el-button>
           <!-- 动态参数表格 -->
-          <el-table :data="manyTableData">
+          <el-table :data="manyTableData" border stripe>
             <!-- 展开行 -->
             <el-table-column type="expand">
               <template slot-scope="scope">
@@ -79,7 +79,7 @@
           <!-- 添加属性的按钮 -->
           <el-button size="mini" type="primary" :disabled="isBtnDisabled" @click="addDialogVisible = true">添加属性</el-button>
           <!-- 静态属性表格 -->
-          <el-table :data="onlyTableData">
+          <el-table :data="onlyTableData" border stripe>
             <!-- 展开行 -->
             <el-table-column type="expand">
               <template slot-scope="scope">
