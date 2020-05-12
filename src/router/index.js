@@ -1,7 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Login from '../views/user/Login.vue'
-import Home from '../views/Home.vue'
 // 引入nprogress
 import NProgress from 'nprogress' // 进度条
 import 'nprogress/nprogress.css' // 这个样式必须引入
@@ -25,12 +23,12 @@ const routes = [
   {
     name: '登录',
     path: '/login',
-    component: Login
+    component: () => import(/* webpackChunkName: "login" */ '../views/user/Login.vue')
   },
   {
     name: '首页',
     path: '/home',
-    component: Home,
+    component: () => import(/* webpackChunkName: "home" */ '../views/Home.vue'),
     redirect: '/welcome',
     children: [
       {
@@ -96,7 +94,8 @@ const router = new VueRouter({
 NProgress.inc(0.2)
 NProgress.configure({ easing: 'ease', speed: 500, showSpinner: false })
 router.beforeEach((to, from, next) => {
-  NProgress.start()
+  // 在 axios 的 request 拦截器中添加了，此处不需要添加
+  // NProgress.start()
   // to => 将要访问的路径
   // from => 从哪个路径跳转而来
   // next => 一个函数，控制是否继续执行
@@ -110,7 +109,8 @@ router.beforeEach((to, from, next) => {
 })
 
 router.afterEach(() => {
-  NProgress.done()
+  // 在 axios 的 response 拦截器中添加了，此处不需要添加
+  // NProgress.done()
 })
 
 export default router

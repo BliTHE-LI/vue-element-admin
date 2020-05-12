@@ -6,7 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-  <title><%= htmlWebpackPlugin.options.title %></title>
+  <title><%= htmlWebpackPlugin.options.isProd ? '' : 'DEV - ' %>电商后台管理系统</title>
+
+  <!-- 生产模式需要引入的资源 -->
+  <% if(htmlWebpackPlugin.options.isProd) {%>
+
+  <%}%>
 </head>
 
 <body>

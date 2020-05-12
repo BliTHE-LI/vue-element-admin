@@ -17,13 +17,25 @@ import './plugins/element.js'
 
 // 导入全局样式
 import './assets/css/global.stylus' // 注册
+
+// 导入 NProgress 对应的 JS 和 CSS
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 Vue.config.productionTip = false
 
 axios.defaults.baseURL = 'https://www.liulongbin.top:8888/api/private/v1/'
 axios.interceptors.request.use(config => {
+  // 在 request 拦截其中，展示进度条
+  NProgress.start()
   // 请求头中添加token
   config.headers.Authorization = window.sessionStorage.getItem('token')
   return config
+})
+axios.interceptors.response.use(response => {
+  // 在 response 拦截其中，隐藏进度条
+  NProgress.done()
+  console.log(response)
+  return response
 })
 Vue.prototype.$http = axios
 
