@@ -1,24 +1,30 @@
-# vue-element-shoping
+# vue-element-admin
 
-## Project setup
+## 安装依赖
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 开发模式启动
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### 编译文件
 ```
 npm run build
 ```
 
-### Lints and fixes files
+### 代码格式校验
 ```
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 生产模式启动
+```
+npm run start
+```
+
+### 重新编译并启动生产模式
+```
+npm run start:build
