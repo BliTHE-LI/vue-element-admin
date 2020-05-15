@@ -1,14 +1,14 @@
 {
-  "name": "vue-element-shoping",
-  "version": "0.1.0",
+  "name": "vue-element-admin",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "build:report": "vue-cli-service build --report --report-json",
-    "start": "pm2 start app.js --name 电商后台管理系统",
+    "start": "pm2 start app.js --name vue-element-admin-web",
     "start:build": "npm run build & npm start",
-    "stop": "pm2 delete 电商后台管理系统",
+    "stop": "pm2 delete vue-element-admin-web",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
