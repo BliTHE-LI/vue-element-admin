@@ -95,7 +95,7 @@ NProgress.inc(0.2)
 NProgress.configure({ easing: 'ease', speed: 500, showSpinner: false })
 router.beforeEach((to, from, next) => {
   // 在 axios 的 request 拦截器中添加了，此处不需要添加
-  // NProgress.start()
+  NProgress.start()
   // to => 将要访问的路径
   // from => 从哪个路径跳转而来
   // next => 一个函数，控制是否继续执行
@@ -110,7 +110,7 @@ router.beforeEach((to, from, next) => {
 
 router.afterEach(() => {
   // 在 axios 的 response 拦截器中添加了，此处不需要添加
-  // NProgress.done()
+  NProgress.done()
 })
 
 export default router

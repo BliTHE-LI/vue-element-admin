@@ -26,14 +26,14 @@ Vue.config.productionTip = false
 axios.defaults.baseURL = 'https://www.liulongbin.top:8888/api/private/v1/'
 axios.interceptors.request.use(config => {
   // 在 request 拦截其中，展示进度条
-  NProgress.start()
+  // NProgress.start()
   // 请求头中添加token
   config.headers.Authorization = window.sessionStorage.getItem('token')
   return config
 })
 axios.interceptors.response.use(response => {
   // 在 response 拦截其中，隐藏进度条
-  NProgress.done()
+  // NProgress.done()
   console.log(response)
   return response
 })
