@@ -6,13 +6,14 @@ import 'nprogress/nprogress.css' // 这个样式必须引入
 
 Vue.use(VueRouter)
 // const constantRouterComponents = {
-//   login: () => import(/* webpackChunkName: "login" */ '../views/user/Login.vue'),
+//   home: () => import(/* webpackChunkName: "home" */ '../views/Home.vue'),
 //   welcome: () => import(/* webpackChunkName: "welcome" */ '../views/Welcome.vue'),
-//   users: () => import(/* webpackChunkName: "users" */ '../views/user/Users.vue'),
-//   rights: () => import(/* webpackChunkName: "rights" */ '../views/power/Rights.vue'),
-//   roles: () => import(/* webpackChunkName: "roles" */ '../views/power/Roles.vue'),
-//   categories: () => import(/* webpackChunkName: "categories" */ '../views/goods/Cate.vue'),
-//   params: () => import(/* webpackChunkName: "params" */ '../views/goods/Params.vue')
+//   login: () => import(/* webpackChunkName: "user-login" */ '../views/user/Login.vue'),
+//   users: () => import(/* webpackChunkName: "user-users" */ '../views/user/Users.vue'),
+//   rights: () => import(/* webpackChunkName: "power-rights" */ '../views/power/Rights.vue'),
+//   roles: () => import(/* webpackChunkName: "power-roles" */ '../views/power/Roles.vue'),
+//   categories: () => import(/* webpackChunkName: "goods-categories" */ '../views/goods/Cate.vue'),
+//   params: () => import(/* webpackChunkName: "goods-params" */ '../views/goods/Params.vue')
 // }
 
 const routes = [
